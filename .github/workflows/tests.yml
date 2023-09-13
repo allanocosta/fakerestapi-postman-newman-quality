@@ -36,7 +36,7 @@ jobs:
         if: always()
         uses: joonvena/robotframework-reporter-action@v2.3
         with:
-          report_path: reports
+          report_path: results
           gh_access_token: ${{ secrets.GITHUB_TOKEN }}
           show_passed_tests: true
           summary: true
