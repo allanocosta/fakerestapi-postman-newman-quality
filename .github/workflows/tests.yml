@@ -28,13 +28,13 @@ jobs:
 
       - name: Download Tests Results
         if: always()
-        uses: actions/download-artifact@v1
+        uses: actions/download-artifact@v3
         with:
           name: reports
 
       - name: Send Report
         if: always()
-        uses: joonvena/robotframework-reporter-action@v2.1
+        uses: joonvena/robotframework-reporter-action@v2.3
         with:
           report_path: reports
           gh_access_token: ${{ secrets.GITHUB_TOKEN }}
