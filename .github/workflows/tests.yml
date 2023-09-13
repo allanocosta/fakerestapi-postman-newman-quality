@@ -15,14 +15,14 @@ jobs:
       - name: Install Newman and htmlextra
         run: npm install -g newman newman-reporter-htmlextra
       - name: Run tests
-        run: newman run FakeRestApi.collection.json -r htmlextra --reporter-htmlextra-export ./log/output.html
+        run: newman run FakeRestApi.collection.json -r htmlextra --reporter-htmlextra-export results-api
       
       - name: Upload Tests Results
         if: always()
         uses: actions/upload-artifact@v3
         with:
           name: results-api
-          path: ./log
+          path: results-api
           if-no-files-found: ignore
           retention-days: 2
 
@@ -38,4 +38,5 @@ jobs:
         with:
           report_path: results-api
           gh_access_token: ${{ secrets.GITHUB_TOKEN }}
-          show_passed_tests: false
+          show_passed_tests: true
+          summary: true
