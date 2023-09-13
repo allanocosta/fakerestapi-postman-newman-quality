@@ -15,7 +15,7 @@ jobs:
       - name: Install Newman and htmlextra
         run: npm install -g newman newman-reporter-htmlextra
       - name: Run tests
-        run: newman run FakeRestApi.collection.json -r htmlextra --reporter-htmlextra-export ./log
+        run: newman run FakeRestApi.collection.json -r htmlextra --reporter-htmlextra-export ./log/output.xml
       
       - name: Upload Tests Results
         if: always()
