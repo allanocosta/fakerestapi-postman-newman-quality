@@ -15,14 +15,14 @@ jobs:
       - name: Install Newman and htmlextra
         run: npm install -g newman newman-reporter-htmlextra
       - name: Run tests
-        run: newman run FakeRestApi.collection.json -r htmlextra --reporter-htmlextra-export ./results-api
+        run: newman run FakeRestApi.collection.json -r htmlextra --reporter-htmlextra-export ./log-api
       
       - name: Upload Tests Results
         if: always()
         uses: actions/upload-artifact@v3
         with:
           name: reports
-          path: ./results-api
+          path: ./log-api
           if-no-files-found: ignore
           retention-days: 2
 
@@ -36,7 +36,7 @@ jobs:
         if: always()
         uses: joonvena/robotframework-reporter-action@v2.1
         with:
-          report_path: ./results-api
+          report_path: reports
           gh_access_token: ${{ secrets.GITHUB_TOKEN }}
           show_passed_tests: true
           summary: true
