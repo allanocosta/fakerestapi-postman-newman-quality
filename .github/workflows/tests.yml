@@ -12,4 +12,4 @@ jobs:
       - name: Install Newman and htmlextra
         run: npm install -g newman newman-reporter-htmlextra
       - name: Run tests
-        run: newman run FakeRestApi.collection.json -r htmlextra --reporter-htmlextra-export output.html
+        run: newman run FakeRestApi.collection.json -r htmlextra
