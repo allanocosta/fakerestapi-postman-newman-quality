@@ -21,7 +21,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v3
         with:
-          name: results-api
+          name: reports
           path: ./results-api
           if-no-files-found: ignore
           retention-days: 2
@@ -30,13 +30,13 @@ jobs:
         if: always()
         uses: actions/download-artifact@v1
         with:
-          name: results-api
+          name: reports
 
       - name: Send Report
         if: always()
         uses: joonvena/robotframework-reporter-action@v2.1
         with:
-          report_path: results-api
+          report_path: ./results-api
           gh_access_token: ${{ secrets.GITHUB_TOKEN }}
           show_passed_tests: true
           summary: true
