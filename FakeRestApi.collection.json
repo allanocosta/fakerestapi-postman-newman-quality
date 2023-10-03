@@ -128,7 +128,7 @@
 									"  pm.response.to.have.status(200);",
 									"});",
 									"",
-									"pm.test(\"id should be equal to 18\", function() {",
+									"pm.test(\"Campo 'id' deve ser igual a 18\", function() {",
 									"    pm.expect(pm.response.json().id).to.equal(18);",
 									"});",
 									"",
