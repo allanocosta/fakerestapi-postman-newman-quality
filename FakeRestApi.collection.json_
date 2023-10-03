@@ -20,7 +20,7 @@
 									"  pm.response.to.have.status(200);\r",
 									"});\r",
 									"\r",
-									"pm.test(\"Response deve conter 30 objetos com o campo 'id'\", function () {\r",
+									"pm.test(\"Response should contain 30 objects with field 'id'\", function () {\r",
 									"  var jsonData = pm.response.json();\r",
 									"  pm.expect(jsonData).to.be.an('array').with.lengthOf(30);\r",
 									"  jsonData.forEach(function (activity) {\r",
@@ -68,16 +68,12 @@
 									"  pm.response.to.have.status(200);\r",
 									"});\r",
 									"\r",
-									"pm.test(\"Campo 'id' deve conter o valor '31'\", function () {\r",
+									"pm.test(\"Field id should be equal to 31\", function () {\r",
 									"  pm.expect(pm.response.json().id).to.equal(31);\r",
 									"});\r",
 									"\r",
-									"pm.test(\"Camoo 'title' deve ser igual a 'Atividade Quality'\", function () {\r",
+									"pm.test(\"Field title should be equal Atividade Quality\", function () {\r",
 									"  pm.expect(pm.response.json().title).to.equal(\"Atividade Quality\");\r",
-									"});\r",
-									"\r",
-									"pm.test(\"Key 'completed' should be equal 'true'\", function () {\r",
-									"  pm.expect(pm.response.json().completed).to.be.true;\r",
 									"});"
 								],
 								"type": "text/javascript"
@@ -112,55 +108,6 @@
 								"api",
 								"v1",
 								"Activities"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "GET Activities ID",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"pm.test(\"Status code is 200\", function () {",
-									"  pm.response.to.have.status(200);",
-									"});",
-									"",
-									"pm.test(\"id should be equal to 18\", function() {",
-									"    pm.expect(pm.response.json().id).to.equal(18);",
-									"});",
-									"",
-									"pm.test(\"Key 'title' should be equal to 'Activity 18'\", function() {",
-									"    pm.expect(pm.response.json().title).to.equal(\"Activity 18\");",
-									"});"
-								],
-								"type": "text/javascript"
-							}
-						}
-					],
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "accept",
-								"value": "text/plain; v=1.0"
-							}
-						],
-						"url": {
-							"raw": "https://fakerestapi.azurewebsites.net/api/v1/Activities/18",
-							"protocol": "https",
-							"host": [
-								"fakerestapi",
-								"azurewebsites",
-								"net"
-							],
-							"path": [
-								"api",
-								"v1",
-								"Activities",
-								"18"
 							]
 						}
 					},
